@@ -164,7 +164,7 @@ header h1{
     color: green;
   }
   
-  .Enviar {
+  #Enviar {
     border: none;
     outline: none;
     background-color: #0000CD;
@@ -175,7 +175,7 @@ header h1{
     transform: .3s ease;
   }
   
-  .Enviar:hover {
+  #Enviar:hover {
     background-color: rgb(56, 90, 194);
     cursor: pointer;
   }
@@ -201,4 +201,38 @@ header h1{
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+#secundaria h2{
+  text-align: center;
+  color: #0000CD;
+  margin: 10px;
+  
+}
+.registrador{
+  background-color: #f0f0f0;
+  height: auto;
+  width: 400px;
+  margin: 10px auto 100px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+}
+#sessao-divs{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.button-apagar{
+  background-color: #0000CD;
+  padding: 5px;
+  border-radius: 7px;
+  color: #f0f0f0;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  margin: 10px;
+
+}
+.button-apagar:hover{
+  background-color: #ff0000;
 }
