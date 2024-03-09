@@ -1,285 +1,283 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
 }
 main{
-  padding: 40px;
+padding: 50px;
 }
 
 body {
-	font-family: Arial, sans-serif;
-	background-color: #f0f0f0;
-  background-repeat: no-repeat;
-  background-size: cover;
+font-family: Arial, sans-serif;
+background-color: #28032c;
+background-repeat: no-repeat;
+background-size: cover;
 }
 
 .fa-user{
-  color: #0000CD;
+color: #e9d631;
 }
 
 header{
-    padding: 10px 15px;
-    background-color: #0000CD;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+  padding: 10px 15px;
+  background-color: #000000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #principal{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .fa-bars{
-   color: #f0f0f0;
-   font-size: 30px;
-   cursor: pointer;
+ color: #f0f0f0;
+ font-size: 30px;
+ cursor: pointer;
 }
 
 header h1{
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #img-main{
-    height: 500px;
-    width: 400px;
+  height: 300px;
+  width: 300px;
 
 }
 
 #img-header{
-    height: 35px;
-    width: 35px;
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    margin-right: 5px;
-    cursor: pointer;
+  height: 50px;
+  background-color: #000000;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 #div-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    color: #f0f0f0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: #f0f0f0;
 }
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 350px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-  
-  .title {
-    font-size: 28px;
-    color:#0000CD;
-    font-weight: 600;
-    letter-spacing: -1px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-  }
-  
-  .title::before,.title::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color:  #0000CD;
-  }
-  
-  .title::before {
-    width: 18px;
-    height: 18px;
-    background-color: #0000CD;
-  }
-  
-  .title::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-  }
-  
-  .message, .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
-  }
-  
-  .signin {
-    text-align: center;
-  }
-  
-  .signin a {
-    color:#0000CD;
-  }
-  
-  .signin a:hover {
-    text-decoration: underline #0000CD;
-  }
-  
-  .flex {
-    display: flex;
-    width: 100%;
-    gap: 6px;
-  }
-  
-  .form label {
-    position: relative;
-  }
-  
-  .form label .input {
-    width: 100%;
-    padding: 15px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-  }
-  
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
-  
-  .form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-  
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 0px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-  
-  .form label .input:valid + span {
-    padding: 5px;
-    color: green;
-  }
-  
-  #Enviar {
-    border: none;
-    outline: none;
-    background-color: #0000CD;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    transform: .3s ease;
-  }
-  
-  #Enviar:hover {
-    background-color: rgb(56, 90, 194);
-    cursor: pointer;
-  }
-  
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-  
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.title {
+  font-size: 28px;
+  color:#e9d631;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color:  #e9d631;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: #e9d631;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message, .signin {
+  color: white;
+  font-size: 14px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color:#0000CD;
+}
+
+.signin a:hover {
+  text-decoration: underline #28032c;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 15px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,.form label .input:valid + span {
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  padding: 5px;
+  color: green;
+}
+
+#Enviar {
+  border: none;
+  outline: none;
+  background-color: #28032c;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+}
+
+#Enviar:hover {
+  background-color: #35043a;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
   }
 
-  footer {
-    background-color:rgb(26, 26, 214);
-    color: #ecf0f1;
-    font-size: 12px;
-    text-align: center;
-    padding: 1em 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+footer {
+  background-color:rgb(0, 0, 0);
+  color: #ecf0f1;
+  font-size: 12px;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 #secundaria h2{
-  text-align: center;
-  color: #0000CD;
-  margin: 10px;
-  
+text-align: center;
+color: #e9d631;
+margin: 10px;
+
 }
 .registrador{
-  background-color: #f0f0f0;
-  height: auto;
-  width: 400px;
-  margin: 10px auto 100px auto;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+background-color: #f0f0f0;
+height: auto;
+width: 400px;
+margin: 10px auto 100px auto;
+padding: 10px;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
 }
 #sessao-divs{
-  display: grid;
-  grid-template-columns: auto auto auto;
+display: grid;
+grid-template-columns: auto auto auto;
+gap: 10px;
 }
 
-.button-apagar{
-  background-color: #0000CD;
-  padding: 5px;
-  border-radius: 7px;
-  color: #f0f0f0;
-  font-family: 'Times New Roman', Times, serif;
-  cursor: pointer;
-  margin: 10px;
+.button-apagar, .editar{
+background-color: #0000CD;
+padding: 5px;
+border-radius: 7px;
+color: #f0f0f0;
+font-family: 'Times New Roman', Times, serif;
+cursor: pointer;
+margin: 10px;
 
 }
 .button-apagar:hover{
-  background-color: #ff0000;
+background-color: #ff0000;
+}
+.editar:hover{
+background-color: #ff0000;
 }
 
 @media screen and (max-width: 500px) {
-  #img-main {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-  }
-  
+#img-main {
+   display: none;
+}
+
 #sessao-divs{
-  display: flex;
-  flex-direction: column;
-  
+display: flex;
+flex-direction: column;
+
 }
 
 .registrador{
- width: 300px;
+width: 300px;
 }
 
 #principal{
-  padding: 50px;
- 
+padding: 50px;
+
 }
 
 .form {
-  
- width: 350px;
- 
+
+width: 350px;
+
 }
 }
