@@ -22,7 +22,7 @@ document.getElementById("Enviar").addEventListener('click', function (para) {
 
    const nome = document.getElementById("Nome").value;
    const CPF = document.getElementById("CPF").value;
-   const idade = Number(document.getElementById("Idade").value);
+   const idade = document.getElementById("Idade").value;
    const email = document.getElementById("Email").value;
    const sexo = document.getElementById("Sexo").value;
    const senha = document.getElementById("Senha").value;
@@ -33,67 +33,6 @@ document.getElementById("Enviar").addEventListener('click', function (para) {
 
    mostraTela();
 });
-
-function editando(index) {
-   const pessoa = historicoCadastrados.cadastrados[index];
-
-   const registrador = document.getElementsByClassName("registrador")[index];
-   registrador.innerHTML = ""; // Clear the content
-
-   // Create input fields for each property
-   const nomeInput = createInputField("Nome", pessoa.nome);
-   const CPFInput = createInputField("CPF", pessoa.CPF);
-   const idadeInput = createInputField("Idade", pessoa.idade);
-   const emailInput = createInputField("Email", pessoa.email);
-   const sexoInput = createInputField("Sexo", pessoa.sexo);
-   const senhaInput = createInputField("Senha", pessoa.senha);
-
-   // Create a button to confirm the changes
-   const confirmButton = document.createElement("button");
-   confirmButton.innerHTML = "Confirmar Edição";
-   confirmButton.addEventListener('click', () => {
-       confirmEdicao(index);
-   });
-
-   // Append the input fields and confirm button to the registrador div
-   registrador.appendChild(nomeInput);
-   registrador.appendChild(CPFInput);
-   registrador.appendChild(idadeInput);
-   registrador.appendChild(emailInput);
-   registrador.appendChild(sexoInput);
-   registrador.appendChild(senhaInput);
-   registrador.appendChild(confirmButton);
-}
-
-function createInputField(label, value) {
-   const inputDiv = document.createElement("div");
-   inputDiv.setAttribute("data-label", label); // Add data-label attribute
-   const labelElement = document.createElement("label");
-   labelElement.innerText = label;
-   const inputElement = document.createElement("input");
-   inputElement.value = value;
-   inputDiv.appendChild(labelElement);
-   inputDiv.appendChild(inputElement);
-   return inputDiv;
-}
-
-function confirmEdicao(index) {
-   const pessoa = historicoCadastrados.cadastrados[index];
-
-   // Get the edited values from the dynamically created input fields
-   const nome = document.querySelector(`.registrador:nth-child(${index + 1}) [data-label="Nome"] input`).value;
-   const CPF = document.querySelector(`.registrador:nth-child(${index + 1}) [data-label="CPF"] input`).value;
-   const idade = Number(document.querySelector(`.registrador:nth-child(${index + 1}) [data-label="Idade"] input`).value);
-   const email = document.querySelector(`.registrador:nth-child(${index + 1}) [data-label="Email"] input`).value;
-   const sexo = document.querySelector(`.registrador:nth-child(${index + 1}) [data-label="Sexo"] input`).value;
-   const senha = document.querySelector(`.registrador:nth-child(${index + 1}) [data-label="Senha"] input`).value;
-
-   // Create a new Cadastro instance with the edited data and replace the existing one
-   historicoCadastrados.cadastrados[index] = new Cadastro(nome, CPF, idade, email, sexo, senha);
-
-   // Redraw the list with the updated information
-   mostraTela();
-}
 
 function mostraTela() {
    const sessao = document.getElementById("sessao-divs");
@@ -116,7 +55,7 @@ function mostraTela() {
            <p><h4>Senha:</h4>  ${pessoa.senha}</p>`;
        editar.innerHTML = "Editar";
        editar.addEventListener('click', () => {
-           editando(contar);
+           inputar(contar, registrador);
        });
        apagar.innerHTML = "Remover Cadastro";
        apagar.addEventListener('click', () => {
@@ -148,4 +87,58 @@ function apagarCadastro(index) {
    } else {
        title2.style.display = 'block';
    }
+}
+
+function inputar(index, registrador) {
+   let inputnome = document.createElement('input');
+   registrador.appendChild(inputnome);
+   inputnome.value = historicoCadastrados.cadastrados[index].nome;
+   inputnome.className = 'inputsEdit'
+   inputnome.placeholder = "Nome";
+   let inputCPF = document.createElement('input');
+   registrador.appendChild(inputCPF);
+   inputCPF.value = historicoCadastrados.cadastrados[index].CPF;
+   inputCPF.className = 'inputsEdit'
+   inputCPF.placeholder = "CPF";
+   let inputidade = document.createElement('input');
+   registrador.appendChild(inputidade);
+   inputidade.value = historicoCadastrados.cadastrados[index].idade;
+   inputidade.className = 'inputsEdit'
+   inputidade.placeholder = "Idade";
+   let inputemail = document.createElement('input');
+   registrador.appendChild(inputemail);
+   inputemail.value = historicoCadastrados.cadastrados[index].email;
+   inputemail.className = 'inputsEdit'
+   inputemail.placeholder = "Email";
+   let inputsexo = document.createElement('input');
+   registrador.appendChild(inputsexo);
+   inputsexo.value = historicoCadastrados.cadastrados[index].sexo;
+   inputsexo.className = 'inputsEdit'
+   inputsexo.placeholder = "Sexo";
+   let inputsenha = document.createElement('input');
+   registrador.appendChild(inputsenha);
+   inputsenha.value = historicoCadastrados.cadastrados[index].senha;
+   inputsenha.className = 'inputsEdit'
+   inputsenha.placeholder = "Senha";
+
+   let atualizar = document.createElement('button');
+   atualizar.className = 'botaoAtualizar'
+   registrador.appendChild(atualizar);
+   atualizar.innerHTML = 'Atualizar';
+   atualizar.addEventListener('click', () => {
+       editando(index, inputnome, inputCPF, inputidade, inputemail, inputsexo, inputsenha);
+   });
+}
+
+function editando(index, inputnome, inputCPF, inputidade, inputemail, inputsexo, inputsenha) {
+   const pessoa = historicoCadastrados.cadastrados[index];
+
+   pessoa.nome = inputnome.value;
+   pessoa.CPF = inputCPF.value;
+   pessoa.idade = inputidade.value;
+   pessoa.email = inputemail.value;
+   pessoa.sexo = inputsexo.value;
+   pessoa.senha = inputsenha.value;
+
+   mostraTela();
 }
