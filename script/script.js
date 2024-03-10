@@ -68,18 +68,11 @@ function mostraTela() {
 
    title2.style.display = 'block';
    console.log(`Total de Pessoas: ${historicoCadastrados.cadastrados.length}`);
-   limpa();
+   
 }
 
-function limpa() {
-   const inputs = document.getElementsByClassName("input");
-   for (let i = 0; i < inputs.length; i++) {
-       inputs[i].value = "";
-   }
-}
-
-function apagarCadastro(index) {
-   historicoCadastrados.cadastrados.splice(index, 1);
+function apagarCadastro(dado) {
+   historicoCadastrados.cadastrados.splice(dado, 1);
 
    mostraTela();
    if (historicoCadastrados.cadastrados.length === 0) {
@@ -89,35 +82,35 @@ function apagarCadastro(index) {
    }
 }
 
-function inputar(index, registrador) {
+function inputar(contador, registrador) {
    let inputnome = document.createElement('input');
    registrador.appendChild(inputnome);
-   inputnome.value = historicoCadastrados.cadastrados[index].nome;
+   inputnome.value = historicoCadastrados.cadastrados[contador].nome;
    inputnome.className = 'inputsEdit'
    inputnome.placeholder = "Nome";
    let inputCPF = document.createElement('input');
    registrador.appendChild(inputCPF);
-   inputCPF.value = historicoCadastrados.cadastrados[index].CPF;
+   inputCPF.value = historicoCadastrados.cadastrados[contador].CPF;
    inputCPF.className = 'inputsEdit'
    inputCPF.placeholder = "CPF";
    let inputidade = document.createElement('input');
    registrador.appendChild(inputidade);
-   inputidade.value = historicoCadastrados.cadastrados[index].idade;
+   inputidade.value = historicoCadastrados.cadastrados[contador].idade;
    inputidade.className = 'inputsEdit'
    inputidade.placeholder = "Idade";
    let inputemail = document.createElement('input');
    registrador.appendChild(inputemail);
-   inputemail.value = historicoCadastrados.cadastrados[index].email;
+   inputemail.value = historicoCadastrados.cadastrados[contador].email;
    inputemail.className = 'inputsEdit'
    inputemail.placeholder = "Email";
    let inputsexo = document.createElement('input');
    registrador.appendChild(inputsexo);
-   inputsexo.value = historicoCadastrados.cadastrados[index].sexo;
+   inputsexo.value = historicoCadastrados.cadastrados[contador].sexo;
    inputsexo.className = 'inputsEdit'
    inputsexo.placeholder = "Sexo";
    let inputsenha = document.createElement('input');
    registrador.appendChild(inputsenha);
-   inputsenha.value = historicoCadastrados.cadastrados[index].senha;
+   inputsenha.value = historicoCadastrados.cadastrados[contador].senha;
    inputsenha.className = 'inputsEdit'
    inputsenha.placeholder = "Senha";
 
@@ -126,12 +119,12 @@ function inputar(index, registrador) {
    registrador.appendChild(atualizar);
    atualizar.innerHTML = 'Atualizar';
    atualizar.addEventListener('click', () => {
-       editando(index, inputnome, inputCPF, inputidade, inputemail, inputsexo, inputsenha);
+       editando(contador, inputnome, inputCPF, inputidade, inputemail, inputsexo, inputsenha);
    });
 }
 
-function editando(index, inputnome, inputCPF, inputidade, inputemail, inputsexo, inputsenha) {
-   const pessoa = historicoCadastrados.cadastrados[index];
+function editando(contador, inputnome, inputCPF, inputidade, inputemail, inputsexo, inputsenha) {
+   const pessoa = historicoCadastrados.cadastrados[contador];
 
    pessoa.nome = inputnome.value;
    pessoa.CPF = inputCPF.value;
