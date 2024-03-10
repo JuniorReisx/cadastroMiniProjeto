@@ -14,6 +14,19 @@ background-color: #28032c;
 background-repeat: no-repeat;
 background-size: cover;
 }
+.inputsEdit{
+  padding: 5px;
+
+}
+.botaoAtualizar{
+   background-color: #e9d631;
+   padding: 10px;
+   border-radius: 6px;
+   color: #f0f0f0 ;
+   margin: 5px;
+   cursor: pointer;
+}
+
 
 .fa-user{
 color: #e9d631;
