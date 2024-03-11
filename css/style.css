@@ -16,6 +16,7 @@ background-size: cover;
 }
 .inputsEdit{
   padding: 5px;
+  width: 100%;
 
 }
 .botaoAtualizar{
@@ -77,7 +78,7 @@ header h1{
   margin-right: 5px;
   cursor: pointer;
 }
-
+.inputsEdit
 #div-header{
   display: flex;
   flex-direction: row;
